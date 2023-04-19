@@ -1,16 +1,27 @@
-import { Link } from 'react-router-dom';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Graph from "./Graph";
+import Uploader from "./uploader";
 
 function App() {
-
   return (
     <div className="App">
-      <header className="App-header">
-      <form>
-      <input type='file' placeholder='Upload file' />
-      <Link to = "/Graph">Upload</Link>
-      </form>
-      </header>
+      {/* <Router>
+        <Switch>
+          <Route exact path="/">
+            <Form />
+          </Route>
+          <Route path="/Graphpage">
+            <Graphpage />
+          </Route>
+        </Switch>
+      </Router> */}
+      <Router>
+        <Routes>
+          <Route path="/Graph" element={<Graph />} />
+          <Route path="/" element={<Uploader />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
