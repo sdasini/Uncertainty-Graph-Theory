@@ -20,5 +20,4 @@ const Graph = () => {
         </div>
     )
 }
-
 export default Graph;
